@@ -42,7 +42,7 @@ export function Contact() {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/sakshi-panchal",
+      href: "https://www.linkedin.com/in/sakshi-panchal-79456b283/",
       color: "blue"
     },
     {

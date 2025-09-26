@@ -51,7 +51,7 @@ export function Footer() {
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             <a
-              href="https://linkedin.com/in/sakshi-panchal"
+              href="https://www.linkedin.com/in/sakshi-panchal-79456b283/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-teal transition-colors duration-300"
