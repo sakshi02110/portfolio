@@ -2,11 +2,67 @@ import { motion } from 'motion/react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { ExternalLink, Github, Award, Clock, Users, Star, TrendingUp, Heart, Trophy, Code } from 'lucide-react';
+import { ExternalLink, Github, Award, Clock, Users, Star, TrendingUp, Trophy, Code } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Projects() {
   const projects = [
+    {
+      title: "Udaan – AI Career Guidance Platform",
+      description: "Engineered an intelligent career guidance platform with AI-driven resume analysis, skill gap identification, and personalized learning roadmaps.",
+      image: "/projects/udaan-mockup.png",
+      technologies: ["React", "TypeScript", "Node.js", "AI Integration"],
+      achievements: [
+        "Automated resume parsing and analysis",
+        "Personalized learning roadmaps generation",
+        "Dynamic skill gap identification"
+      ],
+      githubUrl: "https://github.com/sakshi02110/Udaan",
+      liveUrl: "https://udaan-career.vercel.app/", // Assuming a vercel deployment or placeholder
+      featured: true,
+      impact: "EdTech AI",
+      stats: [
+        { icon: Clock, label: "Analysis Time", value: "< 2 mins" },
+        { icon: Users, label: "Target Audience", value: "Students & Pros" }
+      ]
+    },
+    {
+      title: "Sanjeevani – Medical Report Analyzer",
+      description: "Built an intelligent medical platform that simplifies complex medical reports, highlights key values, and provides easy-to-understand health summaries.",
+      image: "/projects/sanjeevani-mockup.png",
+      technologies: ["React", "Node.js", "Machine Learning", "NLP"],
+      achievements: [
+        "Automated medical report parsing",
+        "Highlighted critical health indicators",
+        "Generated patient-friendly explanations"
+      ],
+      githubUrl: "https://github.com/sakshi02110/Sanjeevani",
+      liveUrl: "https://sanjeevani.streamlit.app/",
+      featured: true,
+      impact: "Healthcare AI",
+      stats: [
+        { icon: Award, label: "Accuracy", value: "98.5%" },
+        { icon: Clock, label: "Processing", value: "Real-time" }
+      ]
+    },
+    {
+      title: "Rainfall Forecasting framework @ DRDO",
+      description: "Developed a research-grade rainfall prediction framework using 65 years (1960–2024) of IMD gridded climate data.",
+      image: "/projects/rainfall-mockup.png",
+      technologies: ["Python", "TensorFlow", "PyTorch", "GeoPandas", "LSTM"],
+      achievements: [
+        "Compared ARIMA, SARIMA, LSTM, GRU, CNN-LSTM",
+        "End-to-end ML pipeline with geospatial preprocessing",
+        "Generated publication-ready results for research paper"
+      ],
+      githubUrl: "#", // Add DRDO repo link if open source
+      featured: true,
+      impact: "Climate Tech",
+      stats: [
+        { icon: Trophy, label: "Dataset", value: "65 Years Data" },
+        { icon: TrendingUp, label: "Models", value: "6 Architectures" }
+      ]
+    },
     {
       title: "MilkShare – Life-Saving Donation Network",
       description: "Engineered India's first digital breast milk donation ecosystem, reducing donor-recipient matching time from weeks to hours through intelligent algorithm design.",
@@ -15,11 +71,11 @@ export function Projects() {
       achievements: [
         "Reduced matching time from weeks to hours",
         "99% component reusability",
-        "3 distinct user workflows (donors, medical staff, NGOs)"
+        "3 distinct user workflows"
       ],
       githubUrl: "https://github.com/sakshi02110/breast-milk-donation-platform",
       liveUrl: "https://breast-milk-donation-platform.vercel.app/",
-      featured: true,
+      featured: false,
       impact: "Social Impact",
       stats: [
         { icon: Clock, label: "Time Reduction", value: "Weeks → Hours" },
@@ -27,77 +83,17 @@ export function Projects() {
       ]
     },
     {
-      title: "Cervical Cancer Detection System",
-      description: "Built ML-based early detection system using XGBoost, achieving 99.2% precision and reducing false negatives by 38%.",
-      image: "https://images.unsplash.com/photo-1684610529682-553625a1ffed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWNoaW5lJTIwbGVhcm5pbmclMjBkYXRhJTIwdmlzdWFsaXphdGlvbnxlbnwxfHx8fDE3NTg3MzE5Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      technologies: ["Python", "XGBoost", "Pandas", "NumPy", "Scikit-learn", "Tableau"],
-      achievements: [
-        "99.2% precision achieved",
-        "38% reduction in false negatives",
-        "ROC-AUC > 0.98",
-        "Processed 800+ clinical profiles"
-      ],
-      githubUrl: "https://github.com/sakshi02110/Python-Machine-Learning-project",
-      featured: true,
-      impact: "Healthcare AI",
-      stats: [
-        { icon: Award, label: "Precision", value: "99.2%" },
-        { icon: Award, label: "ROC-AUC", value: ">0.98" }
-      ]
-    },
-    {
-      title: "Prescripto – Healthcare Platform",
-      description: "Built a comprehensive MERN-stack healthcare ecosystem with JWT authentication, enabling seamless doctor-patient interactions through secure appointment booking and real-time management dashboards.",
-      image: "https://images.unsplash.com/photo-1691934286085-c88039d93dae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBhcHBvaW50bWVudCUyMGJvb2tpbmclMjBzeXN0ZW18ZW58MXx8fHwxNzU4ODE4NjgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Stripe"],
-      achievements: [
-        "Secure JWT-based authentication system",
-        "Dynamic role-based access control (Admin, Doctor, Patient)",
-        "Real-time appointment scheduling with slot management",
-        "Integrated payment processing with Stripe"
-      ],
-      githubUrl: "https://github.com/sakshi02110/prescripto-app",
-      liveUrl: "https://prescripto-frontend-beige.vercel.app/",
-      featured: true,
-      impact: "Healthcare Tech",
-      stats: [
-        { icon: Users, label: "User Roles", value: "3 Types" },
-        { icon: Clock, label: "Booking", value: "Real-time" }
-      ]
-    },
-    {
-      title: "Nature Nexus – Eco Awareness Platform",
-      description: "Designed biodiversity awareness platform in HTML, CSS, JavaScript; ranked Top 20 in a national hackathon. Delivered accessible UX and educational content in a 36-hour sprint.",
-      image: "https://images.unsplash.com/photo-1637751761102-c56e80d466ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmUlMjBjb25zZXJ2YXRpb24lMjBiaW9kaXZlcnNpdHl8ZW58MXx8fHwxNzU4ODE5OTYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "UX/UI"],
-      achievements: [
-        "Top 20 rank in national hackathon",
-        "Accessible UX design principles",
-        "Educational content delivery",
-        "36-hour development sprint"
-      ],
-      githubUrl: "https://github.com/sakshi02110/NatureNexus",
-      featured: true,
-      impact: "Environmental",
-      stats: [
-        { icon: Trophy, label: "Ranking", value: "Top 20" },
-        { icon: Clock, label: "Sprint", value: "36 Hours" }
-      ]
-    },
-    {
       title: "Zerodha Trading Platform Clone",
-      description: "Developed 5 trading modules including market view, portfolio tracker, and order management. Integrated real-time stock API with interactive charting and responsive UI. Implemented secure authentication using JWT and bcrypt with role-based access control.",
+      description: "Developed 5 trading modules including market view, portfolio tracker, and order management. Integrated real-time stock API with interactive charting.",
       image: "https://images.unsplash.com/photo-1704391905064-1e7400746c31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaW5nJTIwcGxhdGZvcm0lMjBzdG9jayUyMG1hcmtldHxlbnwxfHx8fDE3NTg4MTk5NjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      technologies: ["React", "Node.js", "JWT", "Real-time API", "Chart.js", "Responsive UI"],
+      technologies: ["React", "Node.js", "JWT", "Chart.js"],
       achievements: [
         "5 comprehensive trading modules",
         "Real-time stock market integration",
-        "Interactive charting system",
-        "Secure JWT authentication",
-        "Role-based access control"
+        "Interactive charting system"
       ],
       githubUrl: "https://github.com/sakshi02110/Zerodha-Clone-Clean",
-      featured: true,
+      featured: false,
       impact: "FinTech",
       stats: [
         { icon: Code, label: "Modules", value: "5 Trading" },
@@ -107,7 +103,7 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -116,13 +112,14 @@ export function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl text-navy font-poppins mb-4">Featured Projects</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-inter">
-            Showcasing innovative solutions that combine AI, healthcare technology, and social impact.
+          <h2 className="text-4xl md:text-5xl text-primary-text font-heading font-bold mb-4">Featured Projects</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-accent-purple to-accent-blue mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-secondary-text max-w-3xl mx-auto font-sans">
+            Showcasing innovative AI solutions, intelligent healthcare platforms, and robust data products.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
           {/* Featured Projects */}
           {projects.filter(project => project.featured).map((project, index) => (
             <motion.div
@@ -133,55 +130,54 @@ export function Projects() {
               viewport={{ once: true }}
               className="lg:col-span-1 xl:col-span-1"
             >
-              <Card className="h-full border-2 border-teal/20 hover:border-teal/40 transition-all duration-300 hover:shadow-xl group">
-                <div className="relative overflow-hidden rounded-t-lg">
+              <Card className="h-full glass-card border-white/10 group bg-card-bg/40 hover:bg-card-bg/60 transition-colors">
+                <div className="relative overflow-hidden rounded-t-2xl border-b border-white/5">
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-coral text-white border-none shadow-lg">
+                    <Badge className="bg-accent-blue/90 text-white border-none shadow-lg backdrop-blur-md">
                       {project.impact}
                     </Badge>
                   </div>
                   <div className="absolute top-4 left-4">
-                    <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full">
-                      <Star className="h-3 w-3 text-yellow-500 fill-current" />
-                      <span className="text-xs text-gray-700 font-inter">Featured</span>
+                    <div className="flex items-center gap-1 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                      <Star className="h-3.5 w-3.5 text-yellow-400 fill-current" />
+                      <span className="text-xs text-white font-sans font-medium">Featured</span>
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-bg via-transparent to-transparent opacity-80"></div>
                 </div>
                 
-                <CardHeader>
-                  <CardTitle className="text-xl text-navy font-poppins">{project.title}</CardTitle>
-                  <p className="text-gray-600 font-inter leading-relaxed">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-xl text-primary-text font-heading">{project.title}</CardTitle>
+                  <p className="text-secondary-text font-sans leading-relaxed text-sm">
                     {project.description}
                   </p>
                 </CardHeader>
 
                 <CardContent>
                   {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-2 gap-3 mb-5">
                     {project.stats.map((stat, idx) => (
-                      <div key={idx} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
-                        <stat.icon className="h-4 w-4 text-teal" />
+                      <div key={idx} className="flex items-center gap-2 p-3 bg-white/5 rounded-xl border border-white/5">
+                        <stat.icon className="h-4 w-4 text-accent-purple" />
                         <div>
-                          <p className="text-xs text-gray-500 font-inter">{stat.label}</p>
-                          <p className="text-sm text-navy font-poppins">{stat.value}</p>
+                          <p className="text-xs text-secondary-text font-sans">{stat.label}</p>
+                          <p className="text-sm text-primary-text font-heading font-medium">{stat.value}</p>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   {/* Achievements */}
-                  <div className="mb-4">
-                    <h4 className="text-navy font-poppins mb-2">Key Achievements:</h4>
-                    <ul className="space-y-1">
+                  <div className="mb-5">
+                    <ul className="space-y-2">
                       {project.achievements.slice(0, 3).map((achievement, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-gray-700 font-inter text-sm">
-                          <span className="w-2 h-2 bg-teal rounded-full mt-2 flex-shrink-0"></span>
+                        <li key={idx} className="flex items-start gap-2 text-primary-text/80 font-sans text-sm">
+                          <span className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-1.5 flex-shrink-0"></span>
                           <span>{achievement}</span>
                         </li>
                       ))}
@@ -192,9 +188,9 @@ export function Projects() {
                   <div className="mb-6">
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, idx) => (
-                        <Badge key={idx} variant="outline" className="border-gray-300 text-gray-700">
+                        <span key={idx} className="px-3 py-1 text-xs font-medium bg-white/5 text-primary-text/90 rounded-full border border-white/10">
                           {tech}
-                        </Badge>
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -203,19 +199,18 @@ export function Projects() {
                   <div className="flex gap-3">
                     <Button
                       size="sm"
-                      className="bg-navy hover:bg-navy/90 text-white font-inter flex-1 group"
+                      className="bg-white/10 hover:bg-white/20 text-white font-sans flex-1 group border border-white/10"
                       asChild
                     >
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                        GitHub
+                        Code
                       </a>
                     </Button>
                     {project.liveUrl && (
                       <Button
                         size="sm"
-                        variant="outline"
-                        className="border-teal text-teal hover:bg-teal hover:text-white font-inter flex-1 group"
+                        className="bg-gradient-to-r from-accent-purple to-accent-blue hover:opacity-90 text-white font-sans flex-1 group border-none shadow-[0_0_15px_rgba(139,92,246,0.3)]"
                         asChild
                       >
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -232,6 +227,7 @@ export function Projects() {
         </div>
 
         {/* Other Projects */}
+        <h3 className="text-2xl text-primary-text font-heading font-bold mb-8 text-center">Other Notable Works</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.filter(project => !project.featured).map((project, index) => (
             <motion.div
@@ -241,48 +237,48 @@ export function Projects() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-2 border-gray-200 hover:border-coral/40 transition-all duration-300 hover:shadow-lg group">
-                <div className="relative overflow-hidden rounded-t-lg">
+              <Card className="h-full glass-card border-white/5 hover:border-white/20 transition-all duration-300 group">
+                <div className="relative overflow-hidden rounded-t-xl border-b border-white/5">
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-40 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-coral text-white border-none">
+                  <div className="absolute top-3 right-3">
+                    <Badge className="bg-white/10 text-white border-none backdrop-blur-md">
                       {project.impact}
                     </Badge>
                   </div>
                 </div>
                 
-                <CardHeader>
-                  <CardTitle className="text-lg text-navy font-poppins">{project.title}</CardTitle>
-                  <p className="text-gray-600 font-inter text-sm leading-relaxed">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg text-primary-text font-heading">{project.title}</CardTitle>
+                  <p className="text-secondary-text font-sans text-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
                 </CardHeader>
 
                 <CardContent>
                   {/* Stats for non-featured projects */}
-                  <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
                     {project.stats.map((stat, idx) => (
-                      <div key={idx} className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
-                        <stat.icon className="h-3 w-3 text-coral" />
+                      <div key={idx} className="flex items-center gap-2 p-2 bg-white/5 rounded-lg">
+                        <stat.icon className="h-3 w-3 text-accent-blue" />
                         <div>
-                          <p className="text-xs text-gray-500 font-inter">{stat.label}</p>
-                          <p className="text-xs text-navy font-poppins">{stat.value}</p>
+                          <p className="text-[10px] text-secondary-text font-sans uppercase tracking-wider">{stat.label}</p>
+                          <p className="text-xs text-primary-text font-heading font-medium">{stat.value}</p>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-1">
+                  <div className="mb-5">
+                    <div className="flex flex-wrap gap-1.5">
                       {project.technologies.slice(0, 4).map((tech, idx) => (
-                        <Badge key={idx} variant="outline" className="border-gray-300 text-gray-700 text-xs">
+                        <span key={idx} className="px-2 py-0.5 text-[10px] font-medium bg-white/5 text-secondary-text rounded-md border border-white/5">
                           {tech}
-                        </Badge>
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -291,23 +287,22 @@ export function Projects() {
                   <div className="flex gap-2">
                     <Button
                       size="sm"
-                      className="bg-navy hover:bg-navy/90 text-white font-inter flex-1"
+                      className="bg-white/5 hover:bg-white/10 text-white font-sans flex-1 text-xs h-8"
                       asChild
                     >
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-1 h-3 w-3" />
+                        <Github className="mr-1.5 h-3 w-3" />
                         Code
                       </a>
                     </Button>
                     {project.liveUrl && (
                       <Button
                         size="sm"
-                        variant="outline"
-                        className="border-teal text-teal hover:bg-teal hover:text-white font-inter flex-1"
+                        className="bg-accent-blue/20 hover:bg-accent-blue/30 text-accent-blue font-sans flex-1 text-xs h-8"
                         asChild
                       >
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-1 h-3 w-3" />
+                          <ExternalLink className="mr-1.5 h-3 w-3" />
                           Demo
                         </a>
                       </Button>

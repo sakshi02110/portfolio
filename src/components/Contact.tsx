@@ -20,21 +20,21 @@ export function Contact() {
       label: "Email",
       value: "sakshipanchal648@gmail.com",
       href: "mailto:sakshipanchal648@gmail.com",
-      color: "teal"
+      color: "accent-blue"
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+91 9971579040",
       href: "tel:+919971579040",
-      color: "coral"
+      color: "emerald-400"
     },
     {
       icon: MapPin,
       label: "Location",
       value: "New Delhi, India",
       href: "#",
-      color: "navy"
+      color: "accent-purple"
     }
   ];
 
@@ -43,19 +43,19 @@ export function Contact() {
       icon: Linkedin,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/sakshi-panchal-79456b283/",
-      color: "blue"
+      color: "blue-400"
     },
     {
       icon: Github,
       label: "GitHub",
       href: "https://github.com/sakshi02110",
-      color: "gray"
+      color: "white"
     },
     {
       icon: Mail,
       label: "Email",
       href: "mailto:sakshipanchal648@gmail.com",
-      color: "teal"
+      color: "accent-blue"
     }
   ];
 
@@ -81,7 +81,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="contact" className="py-20 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -90,12 +90,13 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl text-navy font-poppins mb-4">Let's Connect</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-inter mb-6">
+          <h2 className="text-4xl md:text-5xl text-primary-text font-heading font-bold mb-4">Let's Connect</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-accent-purple to-accent-blue mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-secondary-text max-w-3xl mx-auto font-sans mb-6">
             Ready to collaborate on innovative AI solutions or discuss exciting opportunities? 
             I'd love to hear from you!
           </p>
-          <div className="flex items-center justify-center gap-2 text-coral font-inter">
+          <div className="flex items-center justify-center gap-2 text-emerald-400 font-sans font-medium">
             <span>Let's build something impactful together</span>
             <Rocket className="h-5 w-5" />
           </div>
@@ -109,11 +110,11 @@ export function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="border-2 border-teal/20 hover:border-teal/30 transition-colors duration-300">
+            <Card className="glass-card border-white/5 hover:border-white/20 transition-colors duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl text-navy font-poppins flex items-center gap-3">
-                  <div className="p-3 bg-teal/10 rounded-lg">
-                    <Send className="h-6 w-6 text-teal" />
+                <CardTitle className="text-2xl text-primary-text font-heading flex items-center gap-3">
+                  <div className="p-3 bg-white/5 rounded-xl shadow-inner border border-white/10">
+                    <Send className="h-6 w-6 text-accent-blue" />
                   </div>
                   Send me a message
                 </CardTitle>
@@ -121,7 +122,7 @@ export function Contact() {
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-navy font-inter">Name</Label>
+                    <Label htmlFor="name" className="text-primary-text font-sans">Name</Label>
                     <Input
                       id="name"
                       name="name"
@@ -130,12 +131,12 @@ export function Contact() {
                       onChange={handleInputChange}
                       placeholder="Your full name"
                       required
-                      className="border-gray-300 focus:border-teal focus:ring-teal"
+                      className="bg-primary-bg/50 border-white/10 text-primary-text focus:border-accent-blue focus:ring-accent-blue/20 placeholder:text-secondary-text/50"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-navy font-inter">Email</Label>
+                    <Label htmlFor="email" className="text-primary-text font-sans">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -144,12 +145,12 @@ export function Contact() {
                       onChange={handleInputChange}
                       placeholder="your.email@example.com"
                       required
-                      className="border-gray-300 focus:border-teal focus:ring-teal"
+                      className="bg-primary-bg/50 border-white/10 text-primary-text focus:border-accent-blue focus:ring-accent-blue/20 placeholder:text-secondary-text/50"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-navy font-inter">Message</Label>
+                    <Label htmlFor="message" className="text-primary-text font-sans">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -158,14 +159,14 @@ export function Contact() {
                       placeholder="Tell me about your project or opportunity..."
                       rows={5}
                       required
-                      className="border-gray-300 focus:border-teal focus:ring-teal resize-none"
+                      className="bg-primary-bg/50 border-white/10 text-primary-text focus:border-accent-blue focus:ring-accent-blue/20 placeholder:text-secondary-text/50 resize-none"
                     />
                   </div>
                   
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-teal hover:bg-teal/90 text-white font-inter group"
+                    className="w-full bg-gradient-to-r from-accent-purple to-accent-blue hover:opacity-90 text-white font-sans group border-none shadow-[0_0_20px_rgba(139,92,246,0.2)]"
                   >
                     <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     Send Message
@@ -184,9 +185,9 @@ export function Contact() {
             className="space-y-8"
           >
             {/* Contact Details */}
-            <Card className="border-2 border-coral/20 hover:border-coral/30 transition-colors duration-300">
+            <Card className="glass-card border-white/5 hover:border-white/20 transition-colors duration-300">
               <CardHeader>
-                <CardTitle className="text-xl text-navy font-poppins">Get in Touch</CardTitle>
+                <CardTitle className="text-xl text-primary-text font-heading">Get in Touch</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -198,14 +199,14 @@ export function Contact() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors duration-300 group"
+                      className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 transition-all duration-300 group"
                     >
-                      <div className={`p-3 bg-${info.color}/10 rounded-lg group-hover:bg-${info.color}/20 transition-colors duration-300`}>
+                      <div className={`p-3 bg-white/5 rounded-xl border border-white/10 group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
                         <info.icon className={`h-5 w-5 text-${info.color}`} />
                       </div>
                       <div>
-                        <p className="text-sm text-gray-500 font-inter">{info.label}</p>
-                        <p className="text-navy font-inter">{info.value}</p>
+                        <p className="text-xs text-secondary-text font-sans uppercase tracking-wider">{info.label}</p>
+                        <p className="text-primary-text font-sans font-medium">{info.value}</p>
                       </div>
                     </motion.a>
                   ))}
@@ -214,9 +215,9 @@ export function Contact() {
             </Card>
 
             {/* Social Links */}
-            <Card className="border-2 border-navy/20 hover:border-navy/30 transition-colors duration-300">
+            <Card className="glass-card border-white/5 hover:border-white/20 transition-colors duration-300">
               <CardHeader>
-                <CardTitle className="text-xl text-navy font-poppins">Connect on Social</CardTitle>
+                <CardTitle className="text-xl text-primary-text font-heading">Connect on Social</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 gap-3">
@@ -230,10 +231,10 @@ export function Contact() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-teal hover:bg-teal/5 transition-all duration-300 group"
+                      className="flex items-center gap-3 p-3 rounded-xl border border-white/5 hover:border-accent-blue hover:bg-accent-blue/10 transition-all duration-300 group"
                     >
-                      <social.icon className="h-5 w-5 text-gray-600 group-hover:text-teal transition-colors duration-300" />
-                      <span className="text-gray-700 group-hover:text-teal font-inter transition-colors duration-300">
+                      <social.icon className="h-5 w-5 text-secondary-text group-hover:text-accent-blue transition-colors duration-300" />
+                      <span className="text-secondary-text group-hover:text-primary-text font-sans font-medium transition-colors duration-300">
                         {social.label}
                       </span>
                     </motion.a>
@@ -249,17 +250,17 @@ export function Contact() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Card className="border-2 border-gradient-to-r from-teal to-coral/20 hover:border-teal/30 transition-colors duration-300">
+              <Card className="glass-panel border-white/5 hover:border-white/20 transition-colors duration-300">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-lg text-navy font-poppins mb-3">Ready to Collaborate?</h3>
-                  <p className="text-gray-600 font-inter mb-4 leading-relaxed">
+                  <h3 className="text-lg text-primary-text font-heading font-semibold mb-3">Ready to Collaborate?</h3>
+                  <p className="text-secondary-text font-sans text-sm mb-5 leading-relaxed">
                     Whether you're looking for an AI engineer, full-stack developer, or a passionate 
                     team leader, I'm excited to discuss how we can create something amazing together.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button
                       size="sm"
-                      className="bg-teal hover:bg-teal/90 text-white font-inter flex-1"
+                      className="bg-accent-blue hover:bg-accent-blue/90 text-white font-sans flex-1"
                       asChild
                     >
                       <a href="mailto:sakshipanchal648@gmail.com">
@@ -269,8 +270,7 @@ export function Contact() {
                     </Button>
                     <Button
                       size="sm"
-                      variant="outline"
-                      className="border-coral text-coral hover:bg-coral hover:text-white font-inter flex-1"
+                      className="bg-white/10 hover:bg-white/20 text-white font-sans flex-1 border border-white/10"
                       asChild
                     >
                       <a href="https://linkedin.com/in/sakshi-panchal" target="_blank" rel="noopener noreferrer">
@@ -280,10 +280,10 @@ export function Contact() {
                     </Button>
                     <Button
                       size="sm"
-                      className="bg-navy hover:bg-navy/90 text-white font-inter flex-1"
+                      className="bg-white/10 hover:bg-white/20 text-white font-sans flex-1 border border-white/10"
                       asChild
                     >
-                      <a href="https://drive.google.com/file/d/10x2FyJdl6xgUIPNU811-lsj3cphLKSaK/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                      <a href="/Resume_Sakshi.pdf" target="_blank" rel="noopener noreferrer">
                         <Download className="mr-2 h-4 w-4" />
                         Resume
                       </a>
